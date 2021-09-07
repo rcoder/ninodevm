@@ -30,6 +30,10 @@
                     	inherit pkgs;
                     	hostName = "nomad-op-1";
                     	rootPassword = "changeme";
+                	} // {
+                    	boot.postBootCommands = ''
+                        	systemctl mask mount-pstore.service
+                    	'';
                 	};
 
                 volumes = [

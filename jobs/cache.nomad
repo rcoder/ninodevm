@@ -1,16 +1,16 @@
 job "cache" {
-	datacenters = ["caravan"]
+    datacenters = ["caravan"]
 
-	group "server" {
-    	network {
-    		mode = "host"
-    	}
+    group "server" {
+        network {
+        	mode = "host"
+        }
 
-    	task "redis" {
-    		driver = "raw_exec"
-    		config {
-    			command = "/run/current-system/sw/bin/redis-server"
-    		}
-    	}
-	}
+        task "redis" {
+        	driver = "raw_exec"
+        	config {
+        		command = "/run/current-system/sw/bin/redis-server"
+        	}
+        }
+    }
 }
